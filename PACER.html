@@ -23,7 +23,7 @@
     </style>
   </head>
   <body>
-   
+
     <button onclick="prevSet()">Back</button>
     <button onclick="nextSet()">Next</button>
     
@@ -45,6 +45,60 @@
         <img src="https://placekitten.com/202/202" alt="Kitten 3" />
       </div>
     </div>
-   
+    
+    <!-- Anonoteer Mode Content Sets -->
+    <div class="anonoteer">
+      <div class="content-set active" id="anonset0">
+        <h2>Anon 1</h2>
+        <p>Anonoteer: First Set</p>
+        <img src="https://placehold.co/200x200?text=anon1" alt="Anon 1" />
+      </div>
+      <div class="content-set" id="anonset1">
+        <h2>Anon 2</h2>
+        <p>Anonoteer: Second Set</p>
+        <img src="https://placehold.co/201x201?text=anon2" alt="Anon 2" />
+      </div>
+      <div class="content-set" id="anonset2">
+        <h2>Anon 3</h2>
+        <p>Anonoteer: Third Set</p>
+        <img src="https://placehold.co/202x202?text=anon3" alt="Anon 3" />
+      </div>
+    </div>
+    
+    <script>
+      let currentSet = 0;
+      const totalSets = 3;
+      
+      function showSet(n) {
+        // Normal mode
+        document.querySelectorAll('.normal .content-set').forEach((el, idx) => {
+          el.classList.toggle('active', idx === n);
+        });
+        // Anonoteer mode
+        document.querySelectorAll('.anonoteer .content-set').forEach((el, idx) => {
+          el.classList.toggle('active', idx === n);
+        });
+      }
+      function nextSet() {
+        currentSet = (currentSet + 1) % totalSets;
+        showSet(currentSet);
+      }
+      function prevSet() {
+        currentSet = (currentSet - 1 + totalSets) % totalSets;
+        showSet(currentSet);
+      }
+      function toggleAnonoteer() {
+        document.body.classList.toggle('anonoteer-mode');
+        const btn = document.getElementById('anonoteerBtn');
+        btn.textContent =
+          document.body.classList.contains('anonoteer-mode')
+            ? 'Switch Back'
+            : 'Switch to Anonoteer';
+        // Refresh displayed content set after mode switch
+        showSet(currentSet);
+      }
+      // Initial display
+      showSet(currentSet);
+    </script>
   </body>
 </html>
