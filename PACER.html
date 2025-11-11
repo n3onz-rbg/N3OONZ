@@ -1,6 +1,9 @@
 <html>
+  <html>
+
   <head>
-    <title>PACER - Anonoteer Switch & Navigation Demo</title>
+    <link rel="stylesheet" href="styles.css">
+    <title>PACER</title>
     <style>
       .anonoteer {
         display: none;
@@ -20,6 +23,31 @@
       button {
         margin: 5px;
       }
+       height: 100vh;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        font-family: 'Comic Sans MS', 'Comic Sans', cursive, sans-serif;
+      }
+      .center-container {
+        text-align: center;
+      }
+      .center-container img {
+        display: block;
+        margin: 20px auto 0 auto; /* adds space above image, centered */
+      }
+      a {
+        color: #eb3489;           /* normal link color */
+      }
+      a:visited {
+        color: #00eaff;           /* visited link color */
+      }
+      a:hover {
+        color: #34ebc0;           /* color when hovered */
+      }
+      a:active {
+        color: #ebc134;           /* color when clicking */
+      }
     </style>
   </head>
   <body>
@@ -29,22 +57,11 @@
     
     <!-- Normal Mode Content Sets -->
     <div class="normal">
-      <div class="content-set active" id="set0">
-        <h2>Set 1</h2>
-        <p>This is the first normal mode text.</p>
-        <img src="https://placekitten.com/200/200" alt="Kitten 1" />
+      <div class="content-set active" class="center-container" id="set0">
+        <h2>devlog1</h2>
+        <p>main menu YAYA</p>
+        <img src="mainn.png"/>
       </div>
-      <div class="content-set" id="set1">
-        <h2>Set 2</h2>
-        <p>This is the second normal mode text.</p>
-        <img src="https://placekitten.com/201/201" alt="Kitten 2" />
-      </div>
-      <div class="content-set" id="set2">
-        <h2>Set 3</h2>
-        <p>This is the third normal mode text.</p>
-        <img src="https://placekitten.com/202/202" alt="Kitten 3" />
-      </div>
-    </div>
     
     <!-- Anonoteer Mode Content Sets -->
     <div class="anonoteer">
